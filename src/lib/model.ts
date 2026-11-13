@@ -20,6 +20,8 @@ export interface ModelResult {
   suspiciousWords: string[];
 }
 
+const STOP = new Set(["the","and","your","you","our","for","with","are","will","kami","anda","dan","yang","untuk","this","that","then","only","pls","boleh","dari","get","can"]);
+
 export function classify(text: string): ModelResult {
   const counts = new Map<number, number>();
   for (const f of tokens(text)) {
@@ -59,7 +61,7 @@ export function classify(text: string): ModelResult {
     score.set(w, s2);
   }
   const suspiciousWords = [...score.entries()]
-    .filter(([w, v]) => v > 1.5 && !/^0+$/.test(w))
+    .filter(([w, v]) => v > 1.5 && !/^0+$/.test(w) && !STOP.has(w))
     .sort((a, b) => b[1] - a[1])
     .slice(0, 6)
     .map(([w]) => w);

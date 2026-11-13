@@ -1,0 +1,180 @@
+[
+  {
+    "key": "dev_v1",
+    "title": "Blind set A, engine v1 (first look, before any tuning)",
+    "n": 150,
+    "evaluated_at": "2026-11-13T09:05:04.821Z",
+    "results": [
+      {
+        "mode": "rules",
+        "recall": 0.58,
+        "precision": 0.967,
+        "f1": 0.725,
+        "false_alarm_rate": 0.04,
+        "accuracy": 0.707,
+        "three_class_accuracy": 0.687,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 48,
+            "job_scam": 1,
+            "mule": 1
+          },
+          "job_scam": {
+            "legit": 24,
+            "job_scam": 26,
+            "mule": 0
+          },
+          "mule": {
+            "legit": 18,
+            "job_scam": 3,
+            "mule": 29
+          }
+        },
+        "median_ms": 0.47
+      },
+      {
+        "mode": "model",
+        "recall": 0.96,
+        "precision": 0.897,
+        "f1": 0.928,
+        "false_alarm_rate": 0.22,
+        "accuracy": 0.9,
+        "three_class_accuracy": 0.873,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 39,
+            "job_scam": 2,
+            "mule": 9
+          },
+          "job_scam": {
+            "legit": 3,
+            "job_scam": 43,
+            "mule": 4
+          },
+          "mule": {
+            "legit": 1,
+            "job_scam": 0,
+            "mule": 49
+          }
+        },
+        "median_ms": 0.2
+      },
+      {
+        "mode": "combined",
+        "recall": 0.97,
+        "precision": 0.898,
+        "f1": 0.933,
+        "false_alarm_rate": 0.22,
+        "accuracy": 0.907,
+        "three_class_accuracy": 0.867,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 39,
+            "job_scam": 3,
+            "mule": 8
+          },
+          "job_scam": {
+            "legit": 2,
+            "job_scam": 45,
+            "mule": 3
+          },
+          "mule": {
+            "legit": 1,
+            "job_scam": 3,
+            "mule": 46
+          }
+        },
+        "median_ms": 0.2
+      }
+    ]
+  },
+  {
+    "key": "dev_v2",
+    "title": "Blind set A, engine v2 (after error analysis on set A)",
+    "n": 150,
+    "evaluated_at": "2026-11-13T09:09:48.355Z",
+    "results": [
+      {
+        "mode": "rules",
+        "recall": 0.62,
+        "precision": 1,
+        "f1": 0.765,
+        "false_alarm_rate": 0,
+        "accuracy": 0.747,
+        "three_class_accuracy": 0.733,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 50,
+            "job_scam": 0,
+            "mule": 0
+          },
+          "job_scam": {
+            "legit": 23,
+            "job_scam": 27,
+            "mule": 0
+          },
+          "mule": {
+            "legit": 15,
+            "job_scam": 2,
+            "mule": 33
+          }
+        },
+        "median_ms": 0.4
+      },
+      {
+        "mode": "model",
+        "recall": 0.97,
+        "precision": 0.96,
+        "f1": 0.965,
+        "false_alarm_rate": 0.08,
+        "accuracy": 0.953,
+        "three_class_accuracy": 0.947,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 46,
+            "job_scam": 1,
+            "mule": 3
+          },
+          "job_scam": {
+            "legit": 1,
+            "job_scam": 48,
+            "mule": 1
+          },
+          "mule": {
+            "legit": 2,
+            "job_scam": 0,
+            "mule": 48
+          }
+        },
+        "median_ms": 0.18
+      },
+      {
+        "mode": "combined",
+        "recall": 0.98,
+        "precision": 0.961,
+        "f1": 0.97,
+        "false_alarm_rate": 0.08,
+        "accuracy": 0.96,
+        "three_class_accuracy": 0.947,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 46,
+            "job_scam": 1,
+            "mule": 3
+          },
+          "job_scam": {
+            "legit": 0,
+            "job_scam": 50,
+            "mule": 0
+          },
+          "mule": {
+            "legit": 2,
+            "job_scam": 2,
+            "mule": 46
+          }
+        },
+        "median_ms": 0.21
+      }
+    ]
+  }
+]

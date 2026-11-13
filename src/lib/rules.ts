@@ -30,7 +30,7 @@ export const RULES: Rule[] = [
       ms: "Majikan sebenar tidak akan menyalurkan wang pelanggan melalui akaun peribadi pekerja. Terima dan pindahkan wang ialah cara akaun keldai digunakan, dan pemilik akaun yang akan disiasat.",
     },
     patterns: [
-      /\b(receiv\w*|terima|collect\w*|kutip\w*|incoming|duit masuk|wang masuk|money (?:come|comes|coming) in(?:to)?|deposits? in|transfers? (?:to|into) (?:your|ur) (?:bank )?(?:account|acc)|(?:send|transfer|bank in|bayar|pay)\w* (?:money |duit |wang |funds? )?(?:to|into|ke) (?:your|ur) (?:bank )?(?:account|acc|akaun)|(?:to|into|ke dalam|dalam|ke) akaun (?:anda|awak|akak|abang|kamu))\b[^.!?\n]{0,90}?\b(transfer\w*|forward\w*|pindah\w*|remit\w*|pay(?:s|ing)? out|send (?:it|them|back|out|to)|withdraw\w*|keluarkan|reload|bank in)\b/gi,
+      /\b(receiv\w*|terima|collect\w*|kutip\w*|incoming|duit masuk|wang masuk|(?:money|payments?|funds?|duit|wang) (?:will )?(?:come|comes|coming|masuk) (?:in)?(?:to|into|ke)?|deposits? in|transfers? (?:to|into) (?:your|ur) (?:bank )?(?:account|acc)|(?:send|transfer|bank in|bayar|pay)\w* (?:money |duit |wang |funds? )?(?:to|into|ke) (?:your|ur) (?:bank )?(?:account|acc|akaun)|(?:to|into|ke dalam|dalam|ke) akaun (?:anda|awak|akak|abang|kamu))\b[^.!?\n]{0,90}?\b(transfer\w*|forward\w*|pindah\w*|remit\w*|pay(?:s|ing)? out|send (?:it|them|back|out|to)|withdraw\w*|keluarkan|reload|bank in)\b/gi,
       /\b(transfer|send)\w* (?:in|masuk)\b[^.!?\n]{0,40}\b(transfer|send|pindah)\w* (?:out|keluar)\b/gi,
     ],
     requires: ACCT,

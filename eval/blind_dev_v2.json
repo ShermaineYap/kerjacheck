@@ -1,18 +1,18 @@
 {
   "file": "data/blind_test.jsonl",
-  "evaluated_at": "2026-11-13T09:06:37.424Z",
+  "evaluated_at": "2026-11-13T09:09:48.355Z",
   "results": [
     {
       "mode": "rules",
       "n": 150,
       "scam_detection": {
-        "recall": 0.61,
+        "recall": 0.62,
         "precision": 1,
-        "f1": 0.758,
+        "f1": 0.765,
         "false_alarm_rate": 0,
-        "accuracy": 0.74
+        "accuracy": 0.747
       },
-      "three_class_accuracy": 0.727,
+      "three_class_accuracy": 0.733,
       "confusion_matrix": {
         "legit": {
           "legit": 50,
@@ -25,12 +25,12 @@
           "mule": 0
         },
         "mule": {
-          "legit": 16,
+          "legit": 15,
           "job_scam": 2,
-          "mule": 32
+          "mule": 33
         }
       },
-      "median_ms": 0.47,
+      "median_ms": 0.4,
       "errors": [
         {
           "id": "b002",
@@ -311,13 +311,6 @@
           "pred": "legit",
           "verdict": "clear",
           "text": "Saya sedang mencari pembantu kewangan untuk syarikat kecil saya. Tugas: menerima bayaran klien ke dalam akaun anda kerana akaun syarikat masih dalam proses pembukaan. Kemudian pindahkan ke akaun pembekal. Gaji RM1,800 sebulan, kerja dari rumah."
-        },
-        {
-          "id": "b149",
-          "label": "mule",
-          "pred": "legit",
-          "verdict": "clear",
-          "text": "Ah boy, uncle got simple job for you. Some money will come in your account, you help me transfer out to few accounts, uncle give you 10%. Don't tell your parents ah, small matter only."
         }
       ]
     },
@@ -349,7 +342,7 @@
           "mule": 48
         }
       },
-      "median_ms": 0.17,
+      "median_ms": 0.18,
       "errors": [
         {
           "id": "b019",
