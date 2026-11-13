@@ -41,7 +41,8 @@ export function analyze(text: string, mode: Mode = "combined"): Analysis {
     reasonSource = useModel && pScam > 0.5 ? "both" : "rules";
   } else if (useModel && pScam >= 0.5) {
     verdict = probs.mule >= probs.job_scam ? "mule" : "job_scam";
-    if (pScam < 0.7 && score.mule + score.job_scam < 0.5) verdict = "caution";
+    // The model alone is less reliable than the rules, so without a rule hit it can only raise a caution unless it is very sure.
+    if (pScam < 0.85 && score.mule + score.job_scam < 0.5) verdict = "caution";
     reasonSource = hits.length ? "both" : "model";
   } else if (useRules && score.mule + score.job_scam + score.caution >= 0.8) {
     verdict = "caution";

@@ -119,6 +119,51 @@ LEGIT = [
     "Delivery helper for furniture shop, RM100/day, Saturday and Sunday. Must be able to lift heavy items. Call the shop during office hours.",
 ]
 
+
+LEGIT += [
+    "Part-time cashier at {cafe}, {pl}. Handle cash and card payments, do end-of-day cash count. RM9/hour. Salary credited to your bank account every month{e}.",
+    "Accounts clerk (part-time) at a trading company in {pl}. Key in invoices, follow up with customers on overdue payments by phone, update records. RM10/hour, office hours.",
+    "Freelance video editor needed for our cafe TikTok, RM150 per video. 50% upfront, balance after delivery, paid to your bank account{e}. Send your portfolio.",
+    "Customer support (part-time) for a payments app, Cyberjaya office. Help users with failed transfers and account login issues via chat. RM12/hour, training provided.",
+    "Kerani akaun sambilan di {pl}. Tugas: rekod resit, sediakan invois, semak penyata bank syarikat. RM9 sejam. Hantar resume ke e-mel HR kami{e}.",
+    "Hiring promoter for credit card booth at shopping mall, {pl}. Basic RM100/day + RM20 per approved application. Company is licensed, interview at our office.",
+    "Need part time driver to deliver goods around Klang Valley using company van, RM100/day. Licence D required{e}.",
+    "Bank internship (3 months) at a branch in {pl}. Allowance RM1,000. Apply through the bank's official careers page. Bring IC and bank account details on your first day for payroll.",
+    "Social media admin for small bakery, create posts and reply DMs, RM800/month, can WFH{e}. Interview via Google Meet.",
+    "Boss nak cari part timer jaga kedai handphone {pl}, RM80 sehari, boleh start esok, takyah pengalaman. Datang terus kedai{e}.",
+    "Our shop need part time helper la, weekend only, RM9 per hour. Can come shop ask for Ms Tan. Pay every Saturday cash or bank in also can{e}.",
+    "Wedding photographer assistant, RM150 per event. Client pays deposit to our company, you get paid after the event by bank transfer{e}.",
+    "Mystery shopper for retail audit: visit the outlet, buy one item (reimbursed with receipt up to RM30), fill in the report. Fee RM40 per visit, paid monthly{e}.",
+    "Tuition centre need BM and English teacher for UPSR/PT3 kids, RM40-RM60 per hour depending on experience. Interview at centre, bring your certificates.",
+    "Weekend part-timer for car wash in {pl}, RM70/day + tips. Must be 18+. Walk in Saturday morning{e}.",
+    "IT support intern at university's ICT department. Fix lab PCs, reset student accounts. RM800/month allowance. Apply via student portal.",
+    "Looking for a Chinese tutor for my daughter, Std 4, at our house in {pl}. RM50/hour, 2 times a week. Please WhatsApp me your experience ah{e}.",
+    "Pembantu jualan pasar malam, RM60 satu malam + makan. Kena pandai kira duit dan layan pelanggan. Hubungi abang Din{e}.",
+    "F&B crew wanted urgently for new outlet opening in {pl}. RM9.50/hr, OT paid, EPF & SOCSO. Apply at the outlet or through our official Instagram{e}.",
+    "Freelance translator (English to BM) for a publisher, RM0.08 per word. Payment within 30 days after invoice, by bank transfer. Sample test required.",
+]
+MULE += [
+    "Agent top-up game diperlukan! Pelanggan bayar ke akaun bank anda, anda forward ke akaun boss dan simpan RM10 setiap order{e}. {c}",
+    "Looking for students with e-wallet + bank account for 'cashout' job. We send money to your account, you withdraw from ATM and deposit to our agent. RM50 each time{e}.",
+    "Kak, boleh tolong terima deposit pelanggan dalam akaun akak? Nanti saya ambil. Upah RM80 setiap kali{e}. {c}",
+    "Bro, my friend's company need to borrow your account to receive payment only, after that you transfer back, you can keep RM300{e}. Confirm safe one.",
+    "{co} hiring Accounts Receivable Associate (remote). You will receive client remittances via your personal DuitNow and settle them to our partner accounts daily. {pd}/day{e}.",
+    "Merchant onboarding assistant: receive settlement funds from merchants into your own account, then release them to the vendor list. Commission per batch{e}. {c}",
+    "We help you open a salary account during training, then our finance team will keep the card and online banking for payroll processing. Salary {pm}{e}.",
+    "Boss cari student ada akaun bank tak guna. Sewa 1 bulan RM1,200, bagi kad ATM dan nombor pin je{e}. {c}",
+    "Our boss give you money in your account, you help buy USDT on Binance P2P and send to his wallet ah. Each time got RM100{e}.",
+]
+SCAM += [
+    "Part-time assistant to our director: buy gift cards / reload PINs using your own money and send the codes, reimbursed with commission end of week{e}. {c}",
+    "Merchant task today! Limited quota{e}. Transfer RM1,000 receive RM1,300. Transfer RM3,000 receive RM3,900. {c}",
+    "Eh u want simple job? Screenshot follow IG page only, each one RM10. Later got reception task need put some money, confirm return one{e}.",
+    "Online assistant, simple task at home, salary {pd}. Need 18+ and bank account. First need to pay RM88 membership to get task{e}. {c}",
+    "Pre-funded orders: you fund each order first, the system returns principal + 8% commission after completion{e}. {c}",
+    "Hiring social media assistant RM25/hour, simple tasks: follow and like our clients' pages. Later join our premium team by investing RM200 for higher income{e}.",
+    "Tahniah anda terpilih sebagai pembantu pemasaran digital. Sila buat transaksi pertama RM100 untuk aktifkan akaun kerja, komisen 30% dipulangkan{e}.",
+    "Offer letter attached{e}. Please pay RM350 for the uniform and laptop setup before your start date. Amount will be refunded in your first salary.",
+]
+
 def fill(t):
     b = pick(BANKS)
     return " ".join(t.format(
@@ -136,7 +181,7 @@ def vary(s):
     return s.strip()
 
 rows = []
-for label, temps, n in [("mule", MULE, 240), ("job_scam", SCAM, 240), ("legit", LEGIT, 240)]:
+for label, temps, n in [("mule", MULE, 300), ("job_scam", SCAM, 300), ("legit", LEGIT, 360)]:
     seen = set()
     while len([r for r in rows if r["label"] == label]) < n:
         s = vary(fill(pick(temps)))

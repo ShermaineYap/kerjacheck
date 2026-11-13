@@ -1,0 +1,501 @@
+{
+  "file": "data/blind_test.jsonl",
+  "evaluated_at": "2026-11-13T09:06:37.424Z",
+  "results": [
+    {
+      "mode": "rules",
+      "n": 150,
+      "scam_detection": {
+        "recall": 0.61,
+        "precision": 1,
+        "f1": 0.758,
+        "false_alarm_rate": 0,
+        "accuracy": 0.74
+      },
+      "three_class_accuracy": 0.727,
+      "confusion_matrix": {
+        "legit": {
+          "legit": 50,
+          "job_scam": 0,
+          "mule": 0
+        },
+        "job_scam": {
+          "legit": 23,
+          "job_scam": 27,
+          "mule": 0
+        },
+        "mule": {
+          "legit": 16,
+          "job_scam": 2,
+          "mule": 32
+        }
+      },
+      "median_ms": 0.47,
+      "errors": [
+        {
+          "id": "b002",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Eh u want simple job? Screenshot follow IG page only, each one RM10. Later got 'reception task' need put some money, confirm return one."
+        },
+        {
+          "id": "b006",
+          "label": "mule",
+          "pred": "job_scam",
+          "verdict": "job_scam",
+          "text": "Agent topup game diperlukan! Pelanggan bayar ke akaun bank anda, anda forward ke akaun boss + simpan RM10 setiap order. Sesuai untuk pelajar. Whatsapp wa.me/60XXXXXXXXX"
+        },
+        {
+          "id": "b011",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Jawatan: Eksekutif Akaun Sambilan (WFH). Tugas harian: semak resit pembayaran pelanggan yang masuk ke akaun bank anda dan buat pindahan ke 3-4 akaun yang ditetapkan oleh pengurus sebelum 6 petang. Elaun RM90 sehari, dibayar mingguan."
+        },
+        {
+          "id": "b012",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Brightpath Talent Consultancy - Graduate Placement Programme 2026. Successful candidates will be placed with our partner multinational companies. A one-time administrative and document verification fee of RM350 applies. Interviews are conducted via Telegram."
+        },
+        {
+          "id": "b019",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Part-time Treasury Support (Student Program) - Kestrel Pay Solutions. Help our licensed payment platform manage liquidity by receiving and routing customer funds via your personal account. Fully compliant. Training video provided. Earn RM80-RM250/day."
+        },
+        {
+          "id": "b020",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Promoter roadshow wanted, RM150/day!! Need to pay RM80 uniform + RM50 insurance before first shift, refundable after event."
+        },
+        {
+          "id": "b027",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "🔥 KERJA MUDAH 🔥 Daftar akaun bank digital baru (online je, 5 minit), bagi login kat kami, dapat RM400 terus. Daftar 3 bank = RM1,200!"
+        },
+        {
+          "id": "b028",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Hi, ur number was recommended by our HR system 😊 We need part-timer to help increase app downloads & ratings. 3 tasks = RM45 straight to ur account. Later got advanced tasks, need prepaid amount but return 30% more. Reply \"OK\" to start."
+        },
+        {
+          "id": "b031",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Task 1: Open the YouTube app, search for the channel I send, click subscribe and take a screenshot to me. After you finish 2 tasks you will get paid RM30 immediately 💰"
+        },
+        {
+          "id": "b033",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Model scouting! You've been selected for a paid photoshoot, RM1,500/session. Please pay RM300 portfolio fee first to confirm your slot."
+        },
+        {
+          "id": "b042",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Hi, your profile matches our Merchant Settlement Assistant role. Simple job: link your bank account to our merchant system so our customers' payments can be settled through you. You don't need to do anything, we operate it remotely. RM700 monthly."
+        },
+        {
+          "id": "b049",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Congratulations, you have been shortlisted for Admin Assistant (RM3,200). Please fill this form with your full name, IC number, photo of IC, mother's maiden name and bank account number so we can set up payroll before the interview."
+        },
+        {
+          "id": "b052",
+          "label": "mule",
+          "pred": "job_scam",
+          "verdict": "job_scam",
+          "text": "Kak, saya dari agensi pelancongan. Nak minta tolong terima deposit pelanggan dalam akaun akak, nanti saya ambil. Upah RM80 setiap kali. Akak cuma bagi no akaun dan screenshot je."
+        },
+        {
+          "id": "b053",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Kerja online RM800 sehari, 30 minit je. Klik sini: wa.me/60XXXXXXXXX"
+        },
+        {
+          "id": "b057",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Our company is looking for online assistant, simple task only do at home, each day salary RM200-RM1,500. Need age 18+ and have bank account to receive salary. Interested pls reply 1."
+        },
+        {
+          "id": "b058",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "OTC buyer needed. We transfer money into your bank first, you buy USDT on P2P with it and send to our wallet, then repeat. Commission RM200/day."
+        },
+        {
+          "id": "b059",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Bro my friend business need ppl to receive payment from China buyers, every RM10k you keep RM300. Just need your bank acc with online banking, then transfer out when he ask."
+        },
+        {
+          "id": "b065",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Tahniah, anda layak untuk jawatan Kerani Pentadbiran (RM2,600). Sila hantar salinan IC depan belakang, gambar selfie pegang IC, nama bank & no akaun untuk proses gaji sebelum sesi temuduga."
+        },
+        {
+          "id": "b068",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Need runner withdraw cash 💵 Money will enter your account, you go ATM withdraw & pass to our guy at LRT station. RM150 per trip. DM"
+        },
+        {
+          "id": "b070",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Orinex Digital Marketing Sdn Bhd (SSM 202201XXXXXX) is recruiting Remote E-commerce Data Optimisers. Role: complete daily product optimisation sets on our merchant platform to improve product ranking. Each set consists of 40 tasks. Remuneration RM3,800-RM6,500 monthly, paid daily. A positive account balance must be maintained to process premium sets."
+        },
+        {
+          "id": "b075",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "We are looking for a Regional Payment Coordinator (part-time) for an international freelancing platform. You'll receive client payments via your personal account and redistribute them to freelancers per our instructions. Pay: 5% of total volume. Remote."
+        },
+        {
+          "id": "b076",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Jom buat duit dari phone! Tugas like 👍 RM10-RM50/hari. Join group sekarang!"
+        },
+        {
+          "id": "b077",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Part-time Hotel Review Agent: submit reviews for hotels on our platform, RM2,000-RM5,000 monthly. Recharge is required when you encounter a 'lucky order'."
+        },
+        {
+          "id": "b080",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Finance Admin Assistant (WFH) - Arcwell Holdings. Duties: process incoming client payments, verify receipts, and perform same-day fund transfers to supplier accounts using your own online banking. Salary RM2,800 + RM20 per batch processed. Fresh graduates & students welcome."
+        },
+        {
+          "id": "b085",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Wanted: Part-time cheque depositor. We give you company cheques, you deposit into your own acc and transfer out the amount minus RM100 fee for you."
+        },
+        {
+          "id": "b088",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "DATA ENTRY JOB 💻 RM3,500/month WFH. Pay RM180 for training kit and software license, fully refundable after 1st salary."
+        },
+        {
+          "id": "b091",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Hi! Thank you for applying through the portal. Next step: complete our online assessment on Telegram with our HR Manager. The training module is compulsory and costs RM199, payable now and reimbursed in your first payslip."
+        },
+        {
+          "id": "b095",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Hi, ini kerja part time daripada pasaraya online. Hanya klik 'grab order' dalam app, sistem auto padan pesanan. Perlu baki minimum RM100 dalam akaun untuk mula."
+        },
+        {
+          "id": "b097",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Typist wanted. RM50 per page. Pay RM120 membership to access our job portal."
+        },
+        {
+          "id": "b099",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Dear Applicant,\nFollowing your application, Kairos Remote Solutions is pleased to offer you the position of Remote Data Entry Clerk at RM28/hour. Please purchase the required equipment (laptop + software bundle, RM1,450) from our certified vendor. The full amount will be reimbursed with your first paycheck.\nRegards, Recruitment Team"
+        },
+        {
+          "id": "b104",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Hiring Part-Time Social Media Assistant 📱 RM25/hour, flexible hours, from home. Simple tasks: follow and like our clients' pages. Contact HR on WhatsApp to begin."
+        },
+        {
+          "id": "b109",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Part time translator RM0.50/word. Need to pass our test first, test fee RM30 payable to the coordinator."
+        },
+        {
+          "id": "b112",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Ejen Pengutip Bayaran (Remote) - Teras Kredit Enterprise (SSM: 00XXXXXXX-X). Tugasan: terima bayaran ansuran pelanggan melalui akaun bank peribadi dan serahkan kepada syarikat setiap petang. Elaun RM1,500 + komisen."
+        },
+        {
+          "id": "b122",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Congratulations, you have been selected as Customer Service Officer at Velora Global Services. You will undergo one week of training with accommodation, food and drinks provided. During training our HR will assist you to open a new bank account for your salary. Please bring your IC."
+        },
+        {
+          "id": "b125",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Hi, I'm Hannah from HR Recruitment. My company is hiring online part-time employees. Our work is simple and free, you can earn RM1,500-RM2,000 a day just by subscribing to YouTube channels. Can I send you the job details?"
+        },
+        {
+          "id": "b126",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Syarikat kami sedang mencari Pembantu Pemasaran Digital secara jarak jauh. Tugasan harian termasuk menyokong kempen produk dengan membuat transaksi percubaan. Modal transaksi akan dipulangkan sepenuhnya bersama komisen 10%-30%."
+        },
+        {
+          "id": "b130",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Freelance Escrow Agent wanted. Buyers on our marketplace pay you directly, you confirm and transfer to sellers after we notify you. Earn 2% fee per deal. Must have Malaysian bank account. Apply via form."
+        },
+        {
+          "id": "b134",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Join our Crypto Mining Task group 📈 Daily signal, invest USDT 100 get USDT 130 in 1 hour. Mentor guide you step by step. Students welcome!"
+        },
+        {
+          "id": "b142",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Urgent need ppl with verified e-wallet account. Our customers will send $$ to you, you just withdraw and send to my agent. Keep 5%. Daily payout. Telegram @XXXXXX"
+        },
+        {
+          "id": "b144",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Saya sedang mencari pembantu kewangan untuk syarikat kecil saya. Tugas: menerima bayaran klien ke dalam akaun anda kerana akaun syarikat masih dalam proses pembukaan. Kemudian pindahkan ke akaun pembekal. Gaji RM1,800 sebulan, kerja dari rumah."
+        },
+        {
+          "id": "b149",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Ah boy, uncle got simple job for you. Some money will come in your account, you help me transfer out to few accounts, uncle give you 10%. Don't tell your parents ah, small matter only."
+        }
+      ]
+    },
+    {
+      "mode": "model",
+      "n": 150,
+      "scam_detection": {
+        "recall": 0.97,
+        "precision": 0.96,
+        "f1": 0.965,
+        "false_alarm_rate": 0.08,
+        "accuracy": 0.953
+      },
+      "three_class_accuracy": 0.947,
+      "confusion_matrix": {
+        "legit": {
+          "legit": 46,
+          "job_scam": 1,
+          "mule": 3
+        },
+        "job_scam": {
+          "legit": 1,
+          "job_scam": 48,
+          "mule": 1
+        },
+        "mule": {
+          "legit": 2,
+          "job_scam": 0,
+          "mule": 48
+        }
+      },
+      "median_ms": 0.17,
+      "errors": [
+        {
+          "id": "b019",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Part-time Treasury Support (Student Program) - Kestrel Pay Solutions. Help our licensed payment platform manage liquidity by receiving and routing customer funds via your personal account. Fully compliant. Training video provided. Earn RM80-RM250/day."
+        },
+        {
+          "id": "b050",
+          "label": "job_scam",
+          "pred": "mule",
+          "verdict": "caution",
+          "text": "Part time job: help us test our forex trading app. Deposit min RM500 into your trading account, our analyst trade for you, you keep 50% profit."
+        },
+        {
+          "id": "b056",
+          "label": "legit",
+          "pred": "mule",
+          "verdict": "caution",
+          "text": "Freelance web developer needed to build a WordPress site for our dental clinic. RM3,000 fixed price, 3 milestones. We pay via bank transfer upon each milestone. No upfront fees from you."
+        },
+        {
+          "id": "b067",
+          "label": "job_scam",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Kedai kami di Shah Alam perlukan Pembantu Kedai. Gaji RM1,800. Sebelum mula, calon perlu bayar deposit RM200 untuk kunci kedai dan uniform melalui pindahan bank."
+        },
+        {
+          "id": "b069",
+          "label": "legit",
+          "pred": "mule",
+          "verdict": "caution",
+          "text": "Kami perlukan Kerani Kutipan (Collection Clerk) separuh masa di pejabat Seremban. Tugas: hubungi pelanggan tertunggak, rekod bayaran dalam sistem syarikat, sediakan laporan mingguan. Semua bayaran dibuat terus ke akaun syarikat. Gaji RM1,400 sebulan."
+        },
+        {
+          "id": "b081",
+          "label": "legit",
+          "pred": "job_scam",
+          "verdict": "caution",
+          "text": "Butik pakaian kat Jalan TAR cari part timer raya season, RM80 sehari, boleh start esok, takyah pengalaman. WhatsApp 01X-XXX XXXX"
+        },
+        {
+          "id": "b092",
+          "label": "legit",
+          "pred": "mule",
+          "verdict": "caution",
+          "text": "Pemandu sambilan untuk hantar barang sekitar Lembah Klang, guna van syarikat. RM100/hari. Lesen D wajib."
+        },
+        {
+          "id": "b122",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Congratulations, you have been selected as Customer Service Officer at Velora Global Services. You will undergo one week of training with accommodation, food and drinks provided. During training our HR will assist you to open a new bank account for your salary. Please bring your IC."
+        }
+      ]
+    },
+    {
+      "mode": "combined",
+      "n": 150,
+      "scam_detection": {
+        "recall": 0.98,
+        "precision": 0.961,
+        "f1": 0.97,
+        "false_alarm_rate": 0.08,
+        "accuracy": 0.96
+      },
+      "three_class_accuracy": 0.947,
+      "confusion_matrix": {
+        "legit": {
+          "legit": 46,
+          "job_scam": 1,
+          "mule": 3
+        },
+        "job_scam": {
+          "legit": 0,
+          "job_scam": 50,
+          "mule": 0
+        },
+        "mule": {
+          "legit": 2,
+          "job_scam": 2,
+          "mule": 46
+        }
+      },
+      "median_ms": 0.21,
+      "errors": [
+        {
+          "id": "b006",
+          "label": "mule",
+          "pred": "job_scam",
+          "verdict": "job_scam",
+          "text": "Agent topup game diperlukan! Pelanggan bayar ke akaun bank anda, anda forward ke akaun boss + simpan RM10 setiap order. Sesuai untuk pelajar. Whatsapp wa.me/60XXXXXXXXX"
+        },
+        {
+          "id": "b019",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Part-time Treasury Support (Student Program) - Kestrel Pay Solutions. Help our licensed payment platform manage liquidity by receiving and routing customer funds via your personal account. Fully compliant. Training video provided. Earn RM80-RM250/day."
+        },
+        {
+          "id": "b052",
+          "label": "mule",
+          "pred": "job_scam",
+          "verdict": "job_scam",
+          "text": "Kak, saya dari agensi pelancongan. Nak minta tolong terima deposit pelanggan dalam akaun akak, nanti saya ambil. Upah RM80 setiap kali. Akak cuma bagi no akaun dan screenshot je."
+        },
+        {
+          "id": "b056",
+          "label": "legit",
+          "pred": "mule",
+          "verdict": "caution",
+          "text": "Freelance web developer needed to build a WordPress site for our dental clinic. RM3,000 fixed price, 3 milestones. We pay via bank transfer upon each milestone. No upfront fees from you."
+        },
+        {
+          "id": "b069",
+          "label": "legit",
+          "pred": "mule",
+          "verdict": "caution",
+          "text": "Kami perlukan Kerani Kutipan (Collection Clerk) separuh masa di pejabat Seremban. Tugas: hubungi pelanggan tertunggak, rekod bayaran dalam sistem syarikat, sediakan laporan mingguan. Semua bayaran dibuat terus ke akaun syarikat. Gaji RM1,400 sebulan."
+        },
+        {
+          "id": "b081",
+          "label": "legit",
+          "pred": "job_scam",
+          "verdict": "caution",
+          "text": "Butik pakaian kat Jalan TAR cari part timer raya season, RM80 sehari, boleh start esok, takyah pengalaman. WhatsApp 01X-XXX XXXX"
+        },
+        {
+          "id": "b092",
+          "label": "legit",
+          "pred": "mule",
+          "verdict": "caution",
+          "text": "Pemandu sambilan untuk hantar barang sekitar Lembah Klang, guna van syarikat. RM100/hari. Lesen D wajib."
+        },
+        {
+          "id": "b122",
+          "label": "mule",
+          "pred": "legit",
+          "verdict": "clear",
+          "text": "Congratulations, you have been selected as Customer Service Officer at Velora Global Services. You will undergo one week of training with accommodation, food and drinks provided. During training our HR will assist you to open a new bank account for your salary. Please bring your IC."
+        }
+      ]
+    }
+  ]
+}

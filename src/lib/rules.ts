@@ -13,6 +13,8 @@ export interface Rule {
   patterns: RegExp[];
   /** if set, the rule only fires when this also matches somewhere in the message */
   requires?: RegExp;
+  /** if set, the rule does not fire when this matches (a legitimate context) */
+  unless?: RegExp;
 }
 
 const ACCT = /\b(account|acc|akaun|akaun bank|bank acc\w*|e-?wallet|tng|touch\s?'?n\s?go|duitnow|boost|grabpay|shopeepay)\b/i;
@@ -28,10 +30,11 @@ export const RULES: Rule[] = [
       ms: "Majikan sebenar tidak akan menyalurkan wang pelanggan melalui akaun peribadi pekerja. Terima dan pindahkan wang ialah cara akaun keldai digunakan, dan pemilik akaun yang akan disiasat.",
     },
     patterns: [
-      /\b(receiv\w*|terima|collect\w*|kutip\w*|incoming|duit masuk|wang masuk|money (?:come|comes|coming) in(?:to)?|deposits? in|transfers? (?:to|into) (?:your|ur) (?:bank )?(?:account|acc))\b[^.!?\n]{0,90}?\b(transfer\w*|forward\w*|pindah\w*|remit\w*|pay(?:s|ing)? out|send (?:it|them|back|out|to)|withdraw\w*|keluarkan|reload|bank in)\b/gi,
+      /\b(receiv\w*|terima|collect\w*|kutip\w*|incoming|duit masuk|wang masuk|money (?:come|comes|coming) in(?:to)?|deposits? in|transfers? (?:to|into) (?:your|ur) (?:bank )?(?:account|acc)|(?:send|transfer|bank in|bayar|pay)\w* (?:money |duit |wang |funds? )?(?:to|into|ke) (?:your|ur) (?:bank )?(?:account|acc|akaun)|(?:to|into|ke dalam|dalam|ke) akaun (?:anda|awak|akak|abang|kamu))\b[^.!?\n]{0,90}?\b(transfer\w*|forward\w*|pindah\w*|remit\w*|pay(?:s|ing)? out|send (?:it|them|back|out|to)|withdraw\w*|keluarkan|reload|bank in)\b/gi,
       /\b(transfer|send)\w* (?:in|masuk)\b[^.!?\n]{0,40}\b(transfer|send|pindah)\w* (?:out|keluar)\b/gi,
     ],
     requires: ACCT,
+    unless: /\b(at the counter|di kaunter|cash register|cash count|till)\b/i,
   },
   {
     id: "rent-account",
@@ -129,7 +132,7 @@ export const RULES: Rule[] = [
       ms: "Kerja 'order booster', ulasan produk dan 'rating' membayar komisen kecil pada mulanya, kemudian jumlahnya bertambah sehingga anda tidak dapat mengeluarkan wang.",
     },
     patterns: [
-      /\b(own money|own balance|own fund|(?:using|use|guna) (?:your|ur) (?:own )?money|duit sendiri|wang sendiri|pay first|bayar dulu|you pay first)\b[^.!?\n]{0,90}\b(refund|commission|komisen|cashback|claim)/gi,
+      /\b(own money|own balance|own fund|(?:using|use|guna) (?:your|ur) (?:own )?money|duit sendiri|wang sendiri|pay first|bayar dulu|you pay first)\b[^.!?\n]{0,90}\b(refund|reimburs\w*|commission|komisen|cashback|claim)/gi,
       /\b(order|orders|pesanan|purchase|buy)\b[^.!?\n]{0,60}\b(commission|komisen|cashback)\b/gi,
       /\b(negative balance|baki negatif|frozen|dibekukan)\b/gi,
     ],
@@ -160,6 +163,7 @@ export const RULES: Rule[] = [
     },
     patterns: [
       /\b(guarantee\w*|dijamin|jaminan untung|confirm (profit|untung)|sure (profit|win)|passive income|auto[- ]?trade|double (your|ur) money|\d+% (profit|return|pulangan))\b/gi,
+      /\b(transfer|pay|bayar|deposit|top[- ]?up)\s*rm ?[\d,]+[^.!?\n]{0,25}\b(receive|get|dapat|return|terima)\s*rm ?[\d,]+/gi,
       /\b(invest|labur)\w*\b[^.!?\n]{0,40}\b(get|dapat)\b[^.!?\n]{0,30}\brm ?\d/gi,
     ],
   },
@@ -176,6 +180,7 @@ export const RULES: Rule[] = [
       /\b(ic|mykad|identity card|kad pengenalan|ic photo|ic front|selfie|swafoto)\b[^.!?\n]{0,80}\b(bank (account|details|acc)|akaun bank|butiran bank)\b/gi,
       /\b(no interview|without interview|tanpa temuduga|tak perlu temuduga|tidak perlu temuduga)\b/gi,
     ],
+    unless: /\b(bring|first day|hari pertama|bawa|payroll|onboarding|on-boarding|after (the |your )?(offer|interview))\b/i,
   },
   {
     id: "too-easy-pay",
@@ -237,6 +242,7 @@ export function runRules(text: string): RuleHit[] {
   const hits: RuleHit[] = [];
   for (const rule of RULES) {
     if (rule.requires && !rule.requires.test(text)) continue;
+    if (rule.unless && rule.unless.test(text)) continue;
     const spans: RuleHit["spans"] = [];
     for (const p of rule.patterns) {
       p.lastIndex = 0;
