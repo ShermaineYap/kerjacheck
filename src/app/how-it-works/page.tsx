@@ -144,6 +144,19 @@ export default function HowItWorks() {
         <h2>Honest limitations</h2>
         <ul>
           <li>
+            <strong>False alarms on real jobs.</strong> On the final blind set, 9 of 40 real jobs got a warning (2 as
+            &quot;be careful&quot;, 7 as scam or mule). 7 of the 9 were deliberately hard cases: freelance gigs where the
+            client pays the student a deposit, admin jobs that involve checking customer deposits, and clerks who handle
+            rent or fee collection for a real business. The rules recognise words like &quot;deposit&quot; but not which
+            direction the money flows. Teaching the rules who pays whom is the next fix; we have not tuned on the final set,
+            so this number stays as measured.
+          </li>
+          <li>
+            <strong>Misses.</strong> 3 of 80 scams got through: a fully formal Malay &quot;product evaluator&quot; job using
+            your own funds, a Manglish &quot;collection officer&quot; asking you to withdraw cash received via DuitNow, and
+            an onboarding message asking for IC photos and a selfie.
+          </li>
+          <li>
             All training and test messages are synthetic or paraphrased; we had no access to a dataset of real scam messages
             received by Malaysian students. Results on real messages will be lower than these numbers.
           </li>

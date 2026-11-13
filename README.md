@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KerjaCheck
 
-## Getting Started
+**Paste a part-time job offer. See the red flags marked like an exam paper. Know what to do next.**
 
-First, run the development server:
+KerjaCheck helps Malaysian students spot job scams and money-mule recruitment before they reply. It reads a job offer received on WhatsApp, Telegram or social media. It highlights the exact phrases that are red flags and explains each one in English or Bahasa Melayu. It then points to Semak Mule (PDRM), the 997 National Scam Response Centre or SSM e-Search.
+
+Everything runs in the browser. Nothing you paste is sent anywhere or stored.
+
+Built for STEMergent Hacks 2026 (Hackathon pathway).
+
+## Why
+
+- Malaysia lost RM2.77 billion to online scams in 2025, up from RM1.57 billion in 2024 ([Malay Mail](https://www.malaymail.com/amp/news/malaysia/2026/05/16/malaysia-scam-losses-surge-from-rm128b-in-2023-to-rm277b-in-2025-investment-fraud-leads-cases-says-deputy-minister/220167)).
+- The Home Minister says syndicates offer university students RM1,000-RM2,000 to use their bank accounts as mule accounts ([The Sun](https://thesun.my/news/malaysia-news/people-issues/students-targeted-as-money-mule-account)).
+- In October 2026, a 22-year-old student took a "RM100 a day accounting job". Three police reports were then lodged against her bank account ([Malay Mail](https://www.malaymail.com/news/malaysia/2026/10/04/final-year-student-falls-for-rm100-a-day-accounting-job-that-turned-her-bank-account-into-a-mule-account/237609)).
+- Semak Mule checks whether an account, phone number or company has *already been reported*. Nothing reads a new offer and tells a student "this job makes you the mule". KerjaCheck works one step earlier, on the message itself.
+
+## How it works
+
+1. **Red-flag rules** (`src/lib/rules.ts`): 15 rules in English, Malay and Manglish, based on PDRM/CCID, NSRC and Bank Negara advisories. They cover receiving and forwarding money, renting accounts, ATM cards and TAC, upfront fees and top-ups, own-money orders, like/share tasks, guaranteed returns, and requests for an IC before any interview. Each rule returns the matched spans and a short explanation in both languages.
+2. **Trained classifier** (`ml/`, `src/lib/model.ts`): logistic regression on character 3-5-grams, words and word pairs, with TF-IDF weighting. It is trained in Python with scikit-learn on 960 labelled synthetic messages and exported as JSON (260 KB). TypeScript runs the same maths, and `scripts/parity.ts` checks that both give identical probabilities (maximum difference about 1e-15).
+3. **Decision** (`src/lib/analyze.ts`): a strong rule match flags the message, and the classifier separates mule offers from job scams. With no rule match, the classifier on its own can only raise a caution, unless it is at least 85% sure.
+
+## How we tested it
+
+The test messages were written by a separate process that never saw the rules, the model or the training data. The engine was committed to Git before each blind run (see the commit history).
+
+| Run | Messages | Scams caught | Real jobs wrongly flagged | 3-way accuracy |
+|---|---|---|---|---|
+| Blind set A, v1 (first look) | 150 | 97.0% | 22.0% | 86.7% |
+| Blind set A, v2 (tuned after looking at A, so not independent) | 150 | 98.0% | 8.0% | 94.7% |
+| **Blind set B, v2.1 (final, never tuned on)** | **120** | **96.3%** | **22.5%** | **87.5%** |
+
+On the final set, combining rules and classifier beats both on their own. Rules alone caught 51%, and the classifier alone caught 96% but did worse at telling mule offers from job scams. Full results are in `eval/` and on the app's `/how-it-works` page.
+
+**Limitations.** All messages are synthetic or paraphrased from news reports, so real-world accuracy will be lower. Most false alarms are real gigs where a client pays the student a deposit, because the rules don't yet know which way the money flows. "No red flags" never means "safe". Chinese and Tamil scripts are not supported.
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev            # http://localhost:3000
+npm test               # engine unit tests
+npm run eval           # re-run every evaluation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Retrain: `python3 ml/gen_train.py && python3 ml/train.py && cp ml/model.json src/lib/model.json`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## AI and third-party disclosure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- The code was written with help from Claude (Anthropic), an AI assistant. The blind test sets were generated by separate Claude instances that had no access to the code, as described above.
+- Libraries used: Next.js, React, scikit-learn, and the Atkinson Hyperlegible and Kalam fonts (Google Fonts, SIL OFL).
+- No external API is called at runtime.
 
-## Learn More
+## Licence
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

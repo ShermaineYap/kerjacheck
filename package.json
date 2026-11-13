@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "tsx --test tests/*.test.ts",
+    "eval": "tsx scripts/evaluate.ts data/blind_test.jsonl eval/blind_dev_v2.json && tsx scripts/evaluate.ts data/blind_final.jsonl eval/blind_final_v2.json && tsx scripts/summary.ts"
   },
   "dependencies": {
     "next": "16.4.6",

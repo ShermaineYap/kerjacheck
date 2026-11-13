@@ -176,5 +176,94 @@
         "median_ms": 0.21
       }
     ]
+  },
+  {
+    "key": "final",
+    "title": "Blind set B, engine v2 (final; never used for tuning)",
+    "n": 120,
+    "evaluated_at": "2026-11-13T09:10:03.645Z",
+    "results": [
+      {
+        "mode": "rules",
+        "recall": 0.512,
+        "precision": 0.854,
+        "f1": 0.641,
+        "false_alarm_rate": 0.175,
+        "accuracy": 0.617,
+        "three_class_accuracy": 0.617,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 33,
+            "job_scam": 4,
+            "mule": 3
+          },
+          "job_scam": {
+            "legit": 20,
+            "job_scam": 20,
+            "mule": 0
+          },
+          "mule": {
+            "legit": 19,
+            "job_scam": 0,
+            "mule": 21
+          }
+        },
+        "median_ms": 0.51
+      },
+      {
+        "mode": "model",
+        "recall": 0.963,
+        "precision": 0.928,
+        "f1": 0.945,
+        "false_alarm_rate": 0.15,
+        "accuracy": 0.925,
+        "three_class_accuracy": 0.875,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 34,
+            "job_scam": 4,
+            "mule": 2
+          },
+          "job_scam": {
+            "legit": 2,
+            "job_scam": 33,
+            "mule": 5
+          },
+          "mule": {
+            "legit": 1,
+            "job_scam": 1,
+            "mule": 38
+          }
+        },
+        "median_ms": 0.22
+      },
+      {
+        "mode": "combined",
+        "recall": 0.963,
+        "precision": 0.895,
+        "f1": 0.928,
+        "false_alarm_rate": 0.225,
+        "accuracy": 0.9,
+        "three_class_accuracy": 0.875,
+        "confusion_matrix": {
+          "legit": {
+            "legit": 31,
+            "job_scam": 6,
+            "mule": 3
+          },
+          "job_scam": {
+            "legit": 2,
+            "job_scam": 36,
+            "mule": 2
+          },
+          "mule": {
+            "legit": 1,
+            "job_scam": 1,
+            "mule": 38
+          }
+        },
+        "median_ms": 0.26
+      }
+    ]
   }
 ]
