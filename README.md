@@ -2,6 +2,8 @@
 
 **Paste a part-time job offer. See the red flags marked like an exam paper. Know what to do next.**
 
+**Live:** https://kerjacheck.vercel.app · **Demo video:** [docs/kerjacheck-demo.mp4](docs/kerjacheck-demo.mp4)
+
 KerjaCheck helps Malaysian students spot job scams and money-mule recruitment before they reply. It reads a job offer received on WhatsApp, Telegram or social media. It highlights the exact phrases that are red flags and explains each one in English or Bahasa Melayu. It then points to Semak Mule (PDRM), the 997 National Scam Response Centre or SSM e-Search.
 
 Everything runs in the browser. Nothing you paste is sent anywhere or stored.

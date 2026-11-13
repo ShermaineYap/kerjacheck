@@ -1,3 +1,5 @@
+**Try it:** https://kerjacheck.vercel.app · **Code:** https://github.com/ShermaineYap/kerjacheck · **Pathway:** Hackathon
+
 ## Inspiration
 
 In October 2026, a 22-year-old final-year student in Kuching took an online "accounting job" paying RM100 a day. Her task was to receive money into her own bank account and transfer it on. Three police reports were later lodged against that account, and the money she passed on came from other people's losses ([Malay Mail](https://www.malaymail.com/news/malaysia/2026/10/04/final-year-student-falls-for-rm100-a-day-accounting-job-that-turned-her-bank-account-into-a-mule-account/237609)).
