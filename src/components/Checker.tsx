@@ -31,7 +31,8 @@ export function Checker() {
 
   // ?ex=0..2 pre-fills an example (used for demos and the video)
   useEffect(() => {
-    const ex = Number(new URLSearchParams(window.location.search).get("ex"));
+    const param = new URLSearchParams(window.location.search).get("ex");
+    const ex = param === null || param === "" ? NaN : Number(param);
     if (Number.isInteger(ex) && EXAMPLES[ex]) {
       setText(EXAMPLES[ex].text);
       run(EXAMPLES[ex].text);
