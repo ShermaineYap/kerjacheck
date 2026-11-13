@@ -31,7 +31,7 @@ The test messages were written by a separate process that never saw the rules, t
 | Blind set A, v2 (tuned after looking at A, so not independent) | 150 | 98.0% | 8.0% | 94.7% |
 | **Blind set B, v2.1 (final, never tuned on)** | **120** | **96.3%** | **22.5%** | **87.5%** |
 
-On the final set, combining rules and classifier beats both on their own. Rules alone caught 51%, and the classifier alone caught 96% but did worse at telling mule offers from job scams. Full results are in `eval/` and on the app's `/how-it-works` page.
+On the final set, rules alone caught 51% of scams and the classifier alone caught 96.3%, wrongly flagging 15% of real jobs. Combining them kept recall at 96.3% but raised false alarms to 22.5%. The rules are kept because they produce the highlighted, explained red flags, and reducing their false alarms is the next priority. Full results are in `eval/` and on the app's `/how-it-works` page.
 
 **Limitations.** All messages are synthetic or paraphrased from news reports, so real-world accuracy will be lower. Most false alarms are real gigs where a client pays the student a deposit, because the rules don't yet know which way the money flows. "No red flags" never means "safe". Chinese and Tamil scripts are not supported.
 

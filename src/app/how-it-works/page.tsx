@@ -136,9 +136,10 @@ export default function HowItWorks() {
           </>
         )}
         <p>
-          Combining the two methods is the point: the rules alone miss scams worded in ways they don&apos;t anticipate, and
-          the classifier alone raises too many false alarms on real jobs that mention money. Each check takes well under a
-          millisecond on a laptop.
+          On the final set the rules alone miss half the scams, and the classifier alone catches 96% with fewer false
+          alarms than the combination. We still combine them because the rules are what find and explain the exact
+          dangerous phrases; a probability on its own can&apos;t tell you why. Reducing the rules&apos; false alarms is the next
+          fix. Each check takes well under a millisecond on a laptop.
         </p>
 
         <h2>Honest limitations</h2>
